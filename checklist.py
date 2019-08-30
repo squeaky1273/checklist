@@ -29,39 +29,64 @@ checklist = list()
 
 # Define Functions
 def create(item):
-    create("purple socks")
-    create("red cloak")
+    checklist.append(item)
 
-def read(item):
-    print(read(0))
-    print(read(1))
+def read(index):
+    return checklist[index]
 
 def update(index, item):
-    update(0, "purple socks")
+    checklist[index] = item
 
 def destroy(index):
-    destroy(1)
+    checklist.pop(index)
 
 def list_all_items():
     index = 0
     for list_item in checklist:
         print(index + list_item)
         index += 1
-#def mark_completed(index):
+def mark_completed(index):
+    mark()
 
+def select(function_code):
+    if function_code == "C":
+        input_item = user_input("Input item:")
+        create(input_item)
 
-#def select(function_code):
+    elif function_code == "R":
+        item_index = user_input("Index Number?")
 
-#def user_input(prompt):
+        read(item_index)
+
+    elif function_code == "P":
+        list_all_items()
+
+    else:
+        print("Unknown Options")
+
+def user_input(prompt):
+    user_input = input(prompt)
+    return user_input
 
 def test():
-    create("purple socks")
-    create("red cloak")
+    checklist.append('purple socks')
+    print(checklist)
+    checklist.append('red cloak')
+    print(checklist)
+    checklist.append('green shoes')
+    print(checklist)
+    checklist.append('yellow shirt')
+    print(checklist)
+    checklist.append('pink pants')
+    print(checklist)
 
     print(read(0))
     print(read(1))
+    print(read(2))
+    print(read(3))
+    print(read(4))
 
-    update(0, "purple socks")
+    update(4, 'pink pants')
 
     destroy(1)
 
@@ -69,3 +94,17 @@ def test():
 
     list_all_items()
     print("{} {}".format(index, list_item))
+    select("C")
+    list_all_items()
+    select("R")
+    list_all_items()
+    select("P")
+    select_all_code()
+
+    user_value = user_input("Please Enter a value")
+    print(user_value)
+
+running = True
+while running:
+    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit")
+    running = select(selection)
