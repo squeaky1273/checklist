@@ -4,3 +4,4 @@ adjective = input("Enter an adjective: ")
 
 
 print("Hi, my name is " + name)
+print("")
