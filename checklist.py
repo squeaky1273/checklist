@@ -46,7 +46,11 @@ def list_all_items():
         print(index + list_item)
         index += 1
 def mark_completed(index):
-    mark()
+    item = checklist[index]
+
+    if item[0] != "*":
+        checklist[index] - "*" + checklist[index]
+        return ("Completed")
 
 def select(function_code):
     if function_code == "C":
