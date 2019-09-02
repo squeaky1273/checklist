@@ -1,4 +1,5 @@
 words = ['interjection', 'name', 'location', 'verb', 'noun', 'adjective', 'color']
+sen = "I have a weird story to tell you."
 def create():
     words[0] = input("Enter an interjection: ")
     words[1] = input("Enter a name: ")
@@ -10,7 +11,8 @@ def create():
 create()
 
 def read():
-    print(words[0] + "! My name is " + words[1] + ". I have a weird story to tell you. ")
+    print(words[0] + "! My name is " + words[1] + ".")
+    print(sen)
     print("Yesterday, I was on my way to (the) " + words[2] + " for fun.")
     print("While " + words[3] + ", I saw a truck. ")
     print("The truck that I saw was so peculiar because it reminded me of a(n) " + words[4] + ".")
