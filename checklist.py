@@ -38,12 +38,12 @@ def update(index, item):
     checklist[int(index)] = str(item)
 
 def destroy(index):
-    checklist.pop(index)
+    checklist.pop(int(index))
 
 def list_all_items():
     index = 0
     for list_item in checklist:
-        print("{} {}".format(index + list_item)
+        print("{} {}".format(index, list_item))
         index += 1
 def mark_completed(index):
     item = checklist[index]
@@ -58,7 +58,8 @@ def select(function_code):
         create(input_item)
 
     elif function_code == "R":
-        item_index = user_input("Index Number?")
+        item_index = user_input("Index Number?: ")
+        destroy(item_index)
 
         read(item_index)
 
