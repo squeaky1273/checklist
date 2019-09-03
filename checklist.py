@@ -32,6 +32,7 @@ def create(item):
     checklist.append(item)
 
 def read(index):
+    print("{} {}".format(index, list_item))
     return checklist[index]
 
 def update(index, item):
@@ -65,6 +66,9 @@ def select(function_code):
     elif function_code == "P":
         list_all_items()
 
+    elif function_code == "Q":
+        return False
+
     else:
         print("Unknown Options")
 
@@ -97,7 +101,7 @@ def test():
     print(read(0))
 
     list_all_items()
-    print("{} {}".format(index, list_item))
+    #print("{} {}".format(index, list_item))
     select("C")
     list_all_items()
     select("R")
