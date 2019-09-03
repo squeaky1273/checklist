@@ -32,11 +32,10 @@ def create(item):
     checklist.append(item)
 
 def read(index):
-    print("{} {}".format(index, list_item))
     return checklist[index]
 
 def update(index, item):
-    checklist[index] = item
+    checklist[int(index)] = str(item)
 
 def destroy(index):
     checklist.pop(index)
@@ -44,7 +43,7 @@ def destroy(index):
 def list_all_items():
     index = 0
     for list_item in checklist:
-        print(index + list_item)
+        print("{} {}".format(index + list_item)
         index += 1
 def mark_completed(index):
     item = checklist[index]
