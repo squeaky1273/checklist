@@ -25,7 +25,7 @@ print("Hello World")
 
 
 # Create our checklist
-checklist = list()
+checklist = []
 
 # Define Functions
 def create(item):
@@ -53,24 +53,28 @@ def mark_completed(index):
         return ("Completed")
 
 def select(function_code):
-    if function_code == "C":
-        input_item = user_input("Input item:")
+    if function_code == "A":
+        input_item = user_input("Input item: ")
         create(input_item)
 
     elif function_code == "R":
         item_index = user_input("Index Number?: ")
         destroy(item_index)
 
-        read(item_index)
-
     elif function_code == "P":
         list_all_items()
+
+    elif function_code == "C":
+        item_index = user_input("Index number?: ")
+        mark_completed(item_index)
+
 
     elif function_code == "Q":
         return False
 
     else:
         print("Unknown Options")
+    return True
 
 def user_input(prompt):
     user_input = input(prompt)
@@ -100,19 +104,18 @@ def test():
 
     print(read(0))
 
-    list_all_items()
-    #print("{} {}".format(index, list_item))
-    select("C")
-    list_all_items()
-    select("R")
-    list_all_items()
-    select("P")
-    select_all_code()
+    #list_all_items()
+    #select("C")
+    #list_all_items()
+    #select("R")
+    #list_all_items()
+    #select("P")
+    #elect_all_code()
 
-    user_value = user_input("Please Enter a value")
+    user_value = user_input("Please Enter a value: ")
     print(user_value)
-
+test()
 running = True
 while running:
-    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit: ")
+    selection = user_input("Press A to add to list, R to remove from list, P to display list, C to mark as complete, and Q to quit: ")
     running = select(selection)
