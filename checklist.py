@@ -110,5 +110,5 @@ def test():
 
 running = True
 while running:
-    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit")
+    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit: ")
     running = select(selection)
